@@ -1,0 +1,47 @@
+<html>
+<head>
+  
+	<title> blogging site</title>
+  <link rel="shortcut icon" href="C:\Users\HP\Desktop\lbJSS4sY_400x400.jpg" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+
+</head>
+<body>
+	<div class="ui main text container">
+		<div class="ui huge header">restful blog app</div>
+		<div class="ui top attached segment">
+			<div class="ui divided items">
+				<% allblogs.forEach(function(allblogs){%>
+				<div class="item">
+						<div class="image">
+							<img src="<%= allblogs.image %>">
+						</div>
+							<div class="content">
+								<h2><%= allblogs.title %></h2>
+									<div class="meta">
+											<span><%= allblogs.created.toDateString() %></span>
+									</div>
+											<div class="description">
+													<p><%- allblogs.des.substring(0,25) %>...</p>
+											</div >
+														<div class="extra">
+														<a class="ui floated basic purple button" href="/blogs/<%= allblogs.id %>">Read more </a>
+														</div>
+								</div>
+				</div>
+	<% }) %>
+			</div>
+		</div>
+	</div>
+	
+	<div class="ui fixed inverted menu">
+		<div class="ui container">
+			<div class="header item"><i class="comments icon"></i>blogsite</div>
+			<a href="\" class="item">home</a>
+			<br>
+			<a href="\blogs\new" class="item">newpost</a>
+		</div>
+	</div>
+<p><bottom> this is index page</bottom></p>
+</body>
+</html>
